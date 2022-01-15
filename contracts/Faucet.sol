@@ -28,10 +28,28 @@ contract Faucet {
     //Array de endereços
 
     uint public numerodeFinanciadores;
+    uint256 public maxFundos = 1*10**18;
+    address public owner;
+
     mapping(address => bool) private patrocinadores; 
     mapping(uint => address) private lutPatrocinadores; 
 
-    uint256 public founds = 1000;
+    /** 
+      *@dev modificadores são usados para reaproveitar condições de um contrato. (require) ou ifs
+     */
+    modifier limitwithdraw(uint256 amount ){
+        require(amount < maxFundos, "Quantidade excedida ao limite");
+        //underscore é usado para não ser acessado diretamente
+        _;
+    }
+
+    modifier onlyOwner(){
+        require(
+          msg.sender == owner, 
+          "Somente o dono pode executar"
+          );
+        _;
+    }
 
     receive() external payable {}
     /*
@@ -47,6 +65,10 @@ contract Faucet {
       }
     }
 
+    function withdraw(uint amount) external limitwithdraw(amount)  {
+     
+      payable(msg.sender).transfer(amount);
+    }
     /**
       * @dev função para retornar todos patrocinadores adicionados na funcao addFundos()
      */
@@ -64,6 +86,8 @@ contract Faucet {
     function getFundadoresAtIndex(uint8 index) external view returns(address) {
       return lutPatrocinadores[index];
     }
+
+
 
     /**
       @dev Diferecncias entre private e internal
