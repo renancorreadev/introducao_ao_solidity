@@ -28,7 +28,8 @@ contract Faucet {
     //Array de endereços
 
     uint public numerodeFinanciadores;
-    mapping(uint => address) private patrocinadores; 
+    mapping(address => bool) private patrocinadores; 
+    mapping(uint => address) private lutPatrocinadores; 
 
     uint256 public founds = 1000;
 
@@ -38,25 +39,30 @@ contract Faucet {
       * @param financiadores - Adiciona o endereço que adicionou fundos para um array de endereço denominado financiadores.
     /*/
     function addFundos() external payable {
-      uint index  = numerodeFinanciadores++;
-      patrocinadores[index] = msg.sender;
+      address patrocinador = msg.sender;
+      if(!patrocinadores[patrocinador]){
+        uint index = numerodeFinanciadores++;
+        patrocinadores[patrocinador] = true;
+        lutPatrocinadores[index] = msg.sender;
+      }
     }
 
     /**
       * @dev função para retornar todos patrocinadores adicionados na funcao addFundos()
      */
     function getTodosPatrocinadores() external view returns(address [] memory) {
-      /**@dev esse modelo de declaração abaixo esta sendo bastante utilizado atualmente para reduzir custos de gas */
+   
        address [] memory _patrocinadores = new address [](numerodeFinanciadores);
-          /** Iteração percorrendo numeroFinanciadores e relacionando ao array patrocinadores[]  */
+
        for (uint i=0; i<numerodeFinanciadores; i++) {
-          _patrocinadores[i] = patrocinadores[i];
+          _patrocinadores[i] = lutPatrocinadores[i];
        }
+
        return _patrocinadores;
     }
 
     function getFundadoresAtIndex(uint8 index) external view returns(address) {
-      return patrocinadores[index];
+      return lutPatrocinadores[index];
     }
 
     /**
@@ -64,7 +70,6 @@ contract Faucet {
       private - Acessivel apenas no contrato 
       internal - So pode ser acessivel atraves de um contrato inteligente ou derivado de outros contratos inteligents
 
-      * note: PRIVATE => Rigoroso, apenas acessivel para variaveis e funcoes. 
-      
+      *note: PRIVATE => Rigoroso, apenas acessivel para variaveis e funcoes. 
      */
 }
