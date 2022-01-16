@@ -27,14 +27,14 @@
 ## 1) Configurar o Postman para localhost usando Ganache: http://127.0.0.1:8545
 
 <p>
-    <img src="assets/image1.png" width="100%" height="50%">
+    <img src="https://github.com/skyxcripto/introducao_ao_solidity/blob/main/_documents/assets/image1.png" width="100%" height="50%">
     
 <p>
 
 ## 2) Configure o tipo de output para Hex e json:
 
 <p>
-    <img src="assets/image2.png" width="100%" height="100%">
+    <img src="https://github.com/skyxcripto/introducao_ao_solidity/blob/main/_documents/assets/image2.png" width="100%" height="100%">
 <p>
 
 - Os Parametros podem ser adicionado no campo abaixo e você pode verificar todos métodos e parametros que a ethereum oferece em <a href="https://eth.wiki/json-rpc/API">Ethereum JsonRPC</a>.
