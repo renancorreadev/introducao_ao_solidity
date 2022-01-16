@@ -1430,12 +1430,12 @@
     "1337": {
       "events": {},
       "links": {},
-      "address": "0xF32e7dEdEfc631c60ea878265d2A56fAa0caA973",
-      "transactionHash": "0x1860c66846d6eec4d1864aade82f8c37adedea323298c31a36ad4644fc8ff3f6"
+      "address": "0xEFB330Bd24C0187fE35F19ab2b996726A551F68d",
+      "transactionHash": "0xfa4813644e863a8f1f4d39a9bf471ca115caeb3ecfae2a4e338c08ad2077d0af"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2022-01-16T01:41:20.843Z",
+  "updatedAt": "2022-01-16T14:09:10.793Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

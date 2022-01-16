@@ -41,6 +41,8 @@ contract Faucet is Owned, Logger, IFaucet {
    
     //Array de endereços
 
+    string public name = "Faucet";
+
     uint public numerodeFinanciadores;
     uint256 public maxFundos = 1*10**18;
    
