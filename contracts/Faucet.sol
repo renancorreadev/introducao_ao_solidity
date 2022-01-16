@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
+import "./Owned.sol";
+import "./Logger.sol";
+import "./IFaucet.sol";
 
   /*
   ------------------- note ---------------------------------------------------
@@ -7,7 +10,6 @@ pragma solidity >=0.4.22 <0.9.0;
     * note: Como iremos buscar valores de um estado e retornar esse valor declaramos a função como view
     * note: @return address[] - Como estamos buscando valores de um array é necessario adicionar memory ou callback 
 
-  
   /** 
       *@dev As diferenças ente public e external são: 
     * public - Função publica visivel - que pode ser acessada por outras funções internas.
@@ -22,14 +24,26 @@ pragma solidity >=0.4.22 <0.9.0;
     * contract.getFundadoresAtIndex(1)
     */
 
-contract Faucet {
-   
+    /**
+      * @dev funções sem implementacões para reutilizacao podem ser declaradas como virtual
+      * e funções que reescrevem a mesma função sem implementação podem ser declarada como override
+      *note: funções que tem apenas um retorno de valor sem nenhum estado devem ser declaradas como pure.
+     */
 
+     /** 
+      *note: Para criar uma função em um contract e chamar essa mesma função em 
+      um outro contrato especifico as funções devem ser declaradas com internal ou public na
+       no contrato A (onde esta implementada) e override no contrato B (onde sera reutilizado) 
+      */
+
+
+contract Faucet is Owned, Logger, IFaucet {
+   
     //Array de endereços
 
     uint public numerodeFinanciadores;
     uint256 public maxFundos = 1*10**18;
-    address public owner;
+   
 
     mapping(address => bool) private patrocinadores; 
     mapping(uint => address) private lutPatrocinadores; 
@@ -43,20 +57,21 @@ contract Faucet {
         _;
     }
 
-    modifier onlyOwner(){
-        require(
-          msg.sender == owner, 
-          "Somente o dono pode executar"
-          );
-        _;
-    }
-
+    
     receive() external payable {}
     /*
       * Função para adicionar Fundos.
       * @param financiadores - Adiciona o endereço que adicionou fundos para um array de endereço denominado financiadores.
     /*/
-    function addFundos() external payable {
+
+    function emitLog() public override pure returns(bytes32){
+      return "Hello";
+    }
+
+    /** 
+      * @dev funções sobrescritas das interfaces necessitam ser override e implementar a função
+     */
+    function addFundos() override external payable {
       address patrocinador = msg.sender;
       if(!patrocinadores[patrocinador]){
         uint index = numerodeFinanciadores++;
@@ -65,8 +80,7 @@ contract Faucet {
       }
     }
 
-    function withdraw(uint amount) external limitwithdraw(amount)  {
-     
+    function withdraw(uint amount) override external limitwithdraw(amount)  {
       payable(msg.sender).transfer(amount);
     }
     /**
@@ -87,7 +101,9 @@ contract Faucet {
       return lutPatrocinadores[index];
     }
 
-
+    function transferOwnership(address newOwner) external onlyOwner {
+      owner = newOwner;
+    }
 
     /**
       @dev Diferecncias entre private e internal
