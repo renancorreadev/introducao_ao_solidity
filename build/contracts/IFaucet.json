@@ -1,0 +1,323 @@
+{
+  "contractName": "IFaucet",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "addFundos",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.4+commit.c7e474f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"addFundos\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Todas fun\\u00e7oes de uma interface devem ser external     note As interfaces nao podem herdar funcionaldiades de outros contratos apenas de  outras interfaces...Interfaces nao podem: <0 declarar variaveis de estado  declarar um construtor  funcoes tem que ser externas\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/IFaucet.sol\":\"IFaucet\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/IFaucet.sol\":{\"keccak256\":\"0x5bb8bd7bc5918a9148ac9c9a7495218afafc2ecd49ffe643753c6eeb5a89dc03\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6f34ddf2b60f53818ec4d7c78312f1c1332c84297b9cbd1e34ee6cd00f33363c\",\"dweb:/ipfs/QmUUHzuiXT7hwu96NxgoZfSUFSnbdA3evCa3pRoKGcoUVJ\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\n/** \n    *@dev Todas funçoes de uma interface devem ser external    \n    note As interfaces nao podem herdar funcionaldiades de outros contratos apenas de \n    outras interfaces...\n\n    @dev Interfaces nao podem: <0\n    * declarar variaveis de estado \n    * declarar um construtor \n    * funcoes tem que ser externas\n */\ninterface IFaucet{\n    function addFundos() external payable; \n    function withdraw(uint amount) external;\n}",
+  "sourcePath": "/Users/nlwsoft/Documents/GitHub/introducao_ao_solidity/contracts/IFaucet.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/IFaucet.sol",
+    "exportedSymbols": {
+      "IFaucet": [
+        187
+      ]
+    },
+    "id": 188,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 177,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:32:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 178,
+          "nodeType": "StructuredDocumentation",
+          "src": "66:321:1",
+          "text": "@dev Todas funçoes de uma interface devem ser external    \nnote As interfaces nao podem herdar funcionaldiades de outros contratos apenas de \noutras interfaces...\n@dev Interfaces nao podem: <0\n declarar variaveis de estado \n declarar um construtor \n funcoes tem que ser externas"
+        },
+        "fullyImplemented": false,
+        "id": 187,
+        "linearizedBaseContracts": [
+          187
+        ],
+        "name": "IFaucet",
+        "nameLocation": "398:7:1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "d3418aa9",
+            "id": 181,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addFundos",
+            "nameLocation": "420:9:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 179,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "429:2:1"
+            },
+            "returnParameters": {
+              "id": 180,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "448:0:1"
+            },
+            "scope": 187,
+            "src": "411:38:1",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "2e1a7d4d",
+            "id": 186,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "withdraw",
+            "nameLocation": "464:8:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 184,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 183,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "478:6:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 186,
+                  "src": "473:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 182,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "473:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "472:13:1"
+            },
+            "returnParameters": {
+              "id": 185,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "494:0:1"
+            },
+            "scope": 187,
+            "src": "455:40:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 188,
+        "src": "388:109:1",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:465:1"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/IFaucet.sol",
+    "exportedSymbols": {
+      "IFaucet": [
+        187
+      ]
+    },
+    "id": 188,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 177,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:32:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 178,
+          "nodeType": "StructuredDocumentation",
+          "src": "66:321:1",
+          "text": "@dev Todas funçoes de uma interface devem ser external    \nnote As interfaces nao podem herdar funcionaldiades de outros contratos apenas de \noutras interfaces...\n@dev Interfaces nao podem: <0\n declarar variaveis de estado \n declarar um construtor \n funcoes tem que ser externas"
+        },
+        "fullyImplemented": false,
+        "id": 187,
+        "linearizedBaseContracts": [
+          187
+        ],
+        "name": "IFaucet",
+        "nameLocation": "398:7:1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "d3418aa9",
+            "id": 181,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addFundos",
+            "nameLocation": "420:9:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 179,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "429:2:1"
+            },
+            "returnParameters": {
+              "id": 180,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "448:0:1"
+            },
+            "scope": 187,
+            "src": "411:38:1",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "2e1a7d4d",
+            "id": 186,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "withdraw",
+            "nameLocation": "464:8:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 184,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 183,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "478:6:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 186,
+                  "src": "473:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 182,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "473:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "472:13:1"
+            },
+            "returnParameters": {
+              "id": 185,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "494:0:1"
+            },
+            "scope": 187,
+            "src": "455:40:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 188,
+        "src": "388:109:1",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:465:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.4+commit.c7e474f2.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2022-01-16T01:41:15.511Z",
+  "devdoc": {
+    "details": "Todas funçoes de uma interface devem ser external     note As interfaces nao podem herdar funcionaldiades de outros contratos apenas de  outras interfaces...Interfaces nao podem: <0 declarar variaveis de estado  declarar um construtor  funcoes tem que ser externas",
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
