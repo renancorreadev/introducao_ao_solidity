@@ -1,4 +1,6 @@
-#Projeto de Faucet Ethereum
+<h1>Projeto Faucet Ethereum</h1>
+
+<p>O Maior desafio no universo blockchain brasileiros é encontrar informação sobre a linguagem Solidity e web3 com React em português, Para facilitar o entendimento de algumas implementações do solidity criei esse repositorio para compartilhar conhecimentos.</hp>
 
 - As pessoas que alimenta a faucet são consideradas financiadores do projeto nesse caso elas conseguem retirar fundos e adicionar fundos na faucet.
 
